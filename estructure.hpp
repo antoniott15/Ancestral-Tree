@@ -10,7 +10,7 @@
 using namespace std;
 typedef struct Parentesc
 {
-    typedef enum { mon, dad} relationship;
+    typedef enum { mother, father} relationship;
     int generation;
 
     void setGeneration(int g) {
