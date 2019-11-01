@@ -1,5 +1,8 @@
 # Arbol ancestral
 
+Build a compiler to translate ancestral terms. Use ancestral language A1 = {mother, father, grandmother, grandfather, greatgrandmother, greatgrandfather, greatgreatgrandmother, ..., greatgreatgreatgreat- greatgrandfather, ...} and build a grammar that reproduces it.
+Also translate the expressions of entry into the number of generations that exist between the ancestors and the person. I.e. mother and father: 1. generation, grandmother and grandfather: 2. generation, greatgrandmother and great- grandfather: 3. generation, etc.
+
 ## Installation
 
 For the correct usage install yacc and lex
