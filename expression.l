@@ -1,8 +1,8 @@
 %{
 #include <stdio.h>
-#include "estructure.hpp"
-#include "y.tab.h"
-void show_error();
+#include "estructure.h"
+#include "engine.tab.h"
+void showError();
 %}
 
 
@@ -25,10 +25,10 @@ void show_error();
 "jhon"      {return JHON;}
 \n 			{return LINE;}
 [ \t]       {};
-.           {show_error(); return (ERROR);}
+.           {showError(); return (ERROR);}
 %%
 
 
-void show_error(){
+void showError(){
     printf("No match \n");
 }

@@ -12,6 +12,7 @@ typedef struct Parents
 {
   relationship typeOf;
   int countGen;
+  char entity;
 }Parentesc;
 
 

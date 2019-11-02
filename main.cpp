@@ -1,5 +1,5 @@
 #include <iostream>
-#include "estructure.hpp"
+#include "estructure.h"
 using namespace std;
 
 
@@ -9,7 +9,7 @@ int yyerror(char *s){
 }
 
 Parentesc *mo(){
-    Parentesc *node;
+    Parentesc *node = new Parentesc();
     node->countGen = 1;
     node->typeOf = mother;
     return node;
@@ -17,31 +17,31 @@ Parentesc *mo(){
 
 
 Parentesc *PreMo(){
-    Parentesc *node;
+    Parentesc *node = new Parentesc();
     node->countGen = 0;
-    node->typeOf = mother;
+    node->entity = 'M';
     return node;
 }
 
 Parentesc *PreFa(){
-    Parentesc *node;
+    Parentesc *node= new Parentesc();
     node->countGen = 0;
-    node->typeOf = father;
+    node->entity = 'F';
     return node;
 }
 
 Parentesc *fa(){
-    Parentesc *node;
+    Parentesc *node= new Parentesc();
     node->countGen = 1;
     node->typeOf = father;
     return node;
 }
-//g
+
 Parentesc *countingGenerations(Parentesc *node){
     node->countGen++;
     return node;
 }
-//G
+
 Parentesc *g(Parentesc *node,relationship parent ){
     node->countGen++;
     node->typeOf = parent;
@@ -51,8 +51,8 @@ relationship getParent(Parentesc *node){
     return node->typeOf;
 }
 
-inline string checkTypes(Parentesc *node,string value1,string value2){
-    string s = node->typeOf == mother ? value1 : value2;
+inline char* checkTypes(Parentesc *node,char* value1,char* value2){
+    char* s = node->typeOf == mother ? value1 : value2;
     return s;
 }
 
@@ -62,7 +62,7 @@ void solution(Parentesc *node){
         return;
     }
    if(node->countGen >= 3){
-       while(node->countGen>1){
+       while(node->countGen-1>1){
            cout << "ur";
            node->countGen--;
        }
@@ -74,13 +74,16 @@ void solution(Parentesc *node){
 
 void globalResult(Parentesc *node){
     if(node->countGen >= 2){
-        cout << checkTypes(node, "Die ", "Dier ");
-    }else{
         cout << checkTypes(node, "Eine ", "Ein ");
+    }else{
+        cout << checkTypes(node, "Die ", "Dier ");
     }
     solution(node);
 
     cout << " von ";
 
-    cout << checkTypes(node, "María","Johann");
+    string entity = node->entity == 'M' ? "Maria" : "Jhonn";
+    cout << entity;
 }
+
+

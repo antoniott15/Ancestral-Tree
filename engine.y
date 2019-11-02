@@ -1,5 +1,5 @@
 %{
-    #include "estructure.hpp"
+    #include "estructure.h"
     //#include <string>
     int yylex();
     int yyerror(char *s);
