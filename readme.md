@@ -48,7 +48,7 @@ g++ -std=c++17 main.cpp
 ## Authors
 
 - Antonio Toche
-- Carlos Vargas
+- Juan Vargas
 - Herless Alvarado
 
 ## Contriubutions
