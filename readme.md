@@ -42,7 +42,7 @@ sudo apt-get install bison flex
 Run this project with
 
 ```
-g++ -std=c++17 main.cpp
+flex expression.l 
 ```
 
 ## Authors
