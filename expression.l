@@ -5,7 +5,7 @@
 void showError();
 %}
 
-//Defining the entitys
+
 %%
 "mother"    {return MOTHER;}
 "Mother"    {return MOTHER;}

@@ -65,7 +65,8 @@
 #line 1 "engine.y" /* yacc.c:339  */
 
     #include "estructure.h"
-    //#include <string>
+
+	//HERE COMES THE METHODS OR UTIL FUNCTIONS
     int yylex();
     int yyerror(char *s);
      Parentesc *mo();
@@ -79,7 +80,7 @@
     void solution( Parentesc *node);
     void globalResult( Parentesc *node);
 
-#line 83 "engine.tab.c" /* yacc.c:339  */
+#line 84 "engine.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -132,11 +133,11 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 21 "engine.y" /* yacc.c:355  */
+#line 22 "engine.y" /* yacc.c:355  */
 
      Parentesc *node;
 
-#line 140 "engine.tab.c" /* yacc.c:355  */
+#line 141 "engine.tab.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -153,7 +154,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 157 "engine.tab.c" /* yacc.c:358  */
+#line 158 "engine.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -451,8 +452,8 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    45,    45,    47,    48,    49,    53,    54,    58,    59,
-      63,    64,    68,    69,    70,    74,    75,    79,    80
+       0,    39,    39,    41,    42,    43,    47,    48,    52,    53,
+      57,    58,    62,    63,    64,    68,    69,    73,    74
 };
 #endif
 
@@ -1236,103 +1237,103 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 45 "engine.y" /* yacc.c:1646  */
+#line 39 "engine.y" /* yacc.c:1646  */
     { exit(0); }
-#line 1242 "engine.tab.c" /* yacc.c:1646  */
+#line 1243 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 48 "engine.y" /* yacc.c:1646  */
+#line 42 "engine.y" /* yacc.c:1646  */
     {solution((yyvsp[-1].node)); printf("\n");}
-#line 1248 "engine.tab.c" /* yacc.c:1646  */
+#line 1249 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 49 "engine.y" /* yacc.c:1646  */
+#line 43 "engine.y" /* yacc.c:1646  */
     {globalResult((yyvsp[-1].node));}
-#line 1254 "engine.tab.c" /* yacc.c:1646  */
+#line 1255 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 53 "engine.y" /* yacc.c:1646  */
+#line 47 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = g((yyvsp[0].node), getParent((yyvsp[-2].node)));}
-#line 1260 "engine.tab.c" /* yacc.c:1646  */
+#line 1261 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 54 "engine.y" /* yacc.c:1646  */
+#line 48 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = g((yyvsp[0].node), getParent((yyvsp[-2].node)));}
-#line 1266 "engine.tab.c" /* yacc.c:1646  */
+#line 1267 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 58 "engine.y" /* yacc.c:1646  */
+#line 52 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = g((yyvsp[0].node), getParent((yyvsp[-2].node)));}
-#line 1272 "engine.tab.c" /* yacc.c:1646  */
+#line 1273 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 59 "engine.y" /* yacc.c:1646  */
+#line 53 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = g((yyvsp[0].node), getParent((yyvsp[-2].node)));}
-#line 1278 "engine.tab.c" /* yacc.c:1646  */
+#line 1279 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 63 "engine.y" /* yacc.c:1646  */
+#line 57 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = PreFa();}
-#line 1284 "engine.tab.c" /* yacc.c:1646  */
+#line 1285 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 64 "engine.y" /* yacc.c:1646  */
+#line 58 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = PreMo();}
-#line 1290 "engine.tab.c" /* yacc.c:1646  */
+#line 1291 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 68 "engine.y" /* yacc.c:1646  */
+#line 62 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = (yyvsp[0].node);}
-#line 1296 "engine.tab.c" /* yacc.c:1646  */
+#line 1297 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 69 "engine.y" /* yacc.c:1646  */
+#line 63 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = countingGenerations((yyvsp[0].node));}
-#line 1302 "engine.tab.c" /* yacc.c:1646  */
+#line 1303 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 70 "engine.y" /* yacc.c:1646  */
+#line 64 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = countingGenerations((yyvsp[0].node));}
-#line 1308 "engine.tab.c" /* yacc.c:1646  */
+#line 1309 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 74 "engine.y" /* yacc.c:1646  */
+#line 68 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = countingGenerations((yyvsp[0].node));}
-#line 1314 "engine.tab.c" /* yacc.c:1646  */
+#line 1315 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 75 "engine.y" /* yacc.c:1646  */
+#line 69 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = countingGenerations((yyvsp[0].node));}
-#line 1320 "engine.tab.c" /* yacc.c:1646  */
+#line 1321 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 79 "engine.y" /* yacc.c:1646  */
+#line 73 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = mo();}
-#line 1326 "engine.tab.c" /* yacc.c:1646  */
+#line 1327 "engine.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 80 "engine.y" /* yacc.c:1646  */
+#line 74 "engine.y" /* yacc.c:1646  */
     {(yyval.node) = fa();}
-#line 1332 "engine.tab.c" /* yacc.c:1646  */
+#line 1333 "engine.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1336 "engine.tab.c" /* yacc.c:1646  */
+#line 1337 "engine.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1560,7 +1561,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 83 "engine.y" /* yacc.c:1906  */
+#line 77 "engine.y" /* yacc.c:1906  */
 
 
 
