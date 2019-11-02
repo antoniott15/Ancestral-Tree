@@ -51,7 +51,7 @@ g++ -std=c++17 main.cpp
 - Juan Vargas
 - Herless Alvarado
 
-## Contriubutions
+## Contributions
 
 For contributions only pull a new resquest
 
