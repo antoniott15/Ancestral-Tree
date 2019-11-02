@@ -5,7 +5,7 @@
 void showError();
 %}
 
-
+//Defining the entitys
 %%
 "mother"    {return MOTHER;}
 "Mother"    {return MOTHER;}
@@ -28,7 +28,7 @@ void showError();
 .           {showError(); return (ERROR);}
 %%
 
-
+// Controling errors
 void showError(){
     printf("No match \n");
 }

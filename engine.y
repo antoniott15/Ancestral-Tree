@@ -1,6 +1,7 @@
 %{
     #include "estructure.h"
-    //#include <string>
+
+	//HERE COMES THE METHODS OR UTIL FUNCTIONS
     int yylex();
     int yyerror(char *s);
      Parentesc *mo();
@@ -15,7 +16,7 @@
     void globalResult( Parentesc *node);
 %}
 
-//HERE COMES THE METHODS OR UTIL FUNCTIONS
+
 
 //INSTANCE OF PARENT 
 %union{
@@ -26,17 +27,10 @@
 %token MOTHER FATHER GRAND GREAT THE OF MARY JHON LINE ERROR
 
 
-//statements
+//statements statement parent repeatOneStatementTOken RepeatOneToken TheNameOfEntity
 %type <node> stmts stmt parent repeatToken repeatOne name
-//statement
 
-//parent
 
-//repeat one statement token
-
-//repeat one token
-
-//name of 
 
 
 //DEFINING GRAMATIC
