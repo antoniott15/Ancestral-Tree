@@ -4,5 +4,12 @@
 
 a.out
 
+engine.tab.c
+engine.tab.h
+engine.tab.o
+estryctyre.h.gch
+lex.yy.o
+lex.yy.c
+main.o
 
 main
