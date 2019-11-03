@@ -41,8 +41,29 @@ sudo apt-get install bison flex
 
 Run this project with
 
+First 
 ```
-g++ -std=c++17 main.cpp
+flex expression.l engine.y
+```
+then
+```
+bison -d engine.y
+```
+then
+```
+flex expression.l
+```
+then
+```
+c++ -c main.cpp engine.tab.c lex.yy.c
+```
+then if you're in linux
+```
+c++ main.o engine.tab.o lex.yy.o -o main -lfl
+```
+if youre in MacOs
+```
+c++ main.o engine.tab.o lex.yy.o -o main -ll
 ```
 
 ## Authors
