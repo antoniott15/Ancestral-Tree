@@ -11,12 +11,10 @@
      Parentesc *countingGenerations( Parentesc *node);
      Parentesc *g( Parentesc *node, char parent );
      char getParent( Parentesc *node);
-	inline char* checkTypes(Parentesc *node,char* value1,char* value2);
+	//inline char* checkTypes(Parentesc *node,char* value1,char* value2);
     void solution( Parentesc *node);
     void globalResult( Parentesc *node);
 %}
-
-
 
 //INSTANCE OF PARENT 
 %union{
@@ -28,9 +26,6 @@
 
 //statements statement parent repeatOneStatementTOken RepeatOneToken TheNameOfEntity
 %type <node> stmts stmt parent repeatToken repeatOne name
-
-
-
 
 //DEFINING GRAMATIC
 %%
