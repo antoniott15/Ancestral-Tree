@@ -1,5 +1,5 @@
 %{
-    #include "main.cpp"
+	#include "estructure.h"
 
 	//HERE COMES THE METHODS OR UTIL FUNCTIONS
     int yylex();
