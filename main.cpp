@@ -2,8 +2,6 @@
 #include "estructure.h"
 using namespace std;
 
-
-
 // Control error
 int yyerror(char *s){
     cout << "Syntax error " << s << endl;
