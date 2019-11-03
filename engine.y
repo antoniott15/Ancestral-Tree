@@ -1,5 +1,5 @@
 %{
-    #include "estructure.h"
+    #include "main.cpp"
 
 	//HERE COMES THE METHODS OR UTIL FUNCTIONS
     int yylex();
@@ -9,9 +9,9 @@
      Parentesc *PreFa();
      Parentesc *fa();
      Parentesc *countingGenerations( Parentesc *node);
-     Parentesc *g( Parentesc *node, relationship parent );
-     relationship getParent( Parentesc *node);
-    //inline string checkTypes(Parentesc *node,string value1,string value2);
+     Parentesc *g( Parentesc *node, char parent );
+     char getParent( Parentesc *node);
+	inline char* checkTypes(Parentesc *node,char* value1,char* value2);
     void solution( Parentesc *node);
     void globalResult( Parentesc *node);
 %}
@@ -25,7 +25,6 @@
 
 //DEFINING TOKENS
 %token MOTHER FATHER GRAND GREAT THE OF MARY JHON LINE ERROR
-
 
 //statements statement parent repeatOneStatementTOken RepeatOneToken TheNameOfEntity
 %type <node> stmts stmt parent repeatToken repeatOne name
@@ -47,28 +46,23 @@ stmts:
 	THE parent OF name 			        {$$ = g($4, getParent($2));}
 	| THE parent OF repeatToken		    {$$ = g($4, getParent($2));}
 	;
-
-repeatToken:
-	THE parent OF name 			        {$$ = g($4, getParent($2));}
-	| THE parent OF repeatToken 		{$$ = g($4, getParent($2));}
-	;
-
-name:
-	JHON							    {$$ = PreFa();}
-	| MARY							    {$$ = PreMo();}
-	;
-
 stmt:
 	parent							    {$$ = $1;}
 	| GRAND parent					    {$$ = countingGenerations($2);}
 	| GREAT repeatOne 					{$$ = countingGenerations($2);}
+	;	
+repeatToken:
+	THE parent OF name 			        {$$ = g($4, getParent($2));}
+	| THE parent OF repeatToken 		{$$ = g($4, getParent($2));}
 	;
-	
 repeatOne:
 	GREAT repeatOne						{$$ = countingGenerations($2);}
 	| GRAND parent					    {$$ = countingGenerations($2);}
 	;
-
+name:
+	JHON							    {$$ = PreFa();}
+	| MARY							    {$$ = PreMo();}
+	;
 parent:
 	MOTHER 							    {$$ = mo();}
 	| FATHER 						    {$$ = fa();}

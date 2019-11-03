@@ -3,6 +3,7 @@
 using namespace std;
 
 
+
 // Control error
 int yyerror(char *s){
     cout << "Syntax error " << s << endl;
@@ -13,7 +14,7 @@ int yyerror(char *s){
 Parentesc *mo(){
     Parentesc *node = new Parentesc();
     node->countGen = 1;
-    node->typeOf = mother;
+    node->typeOf = 'M';
     return node;
 }
 
@@ -37,7 +38,7 @@ Parentesc *PreFa(){
 Parentesc *fa(){
     Parentesc *node= new Parentesc();
     node->countGen = 1;
-    node->typeOf = father;
+    node->typeOf = 'F';
     return node;
 }
 
@@ -48,19 +49,19 @@ Parentesc *countingGenerations(Parentesc *node){
 }
 
 //Setting the type of parent mother/father 
-Parentesc *g(Parentesc *node,relationship parent ){
+Parentesc *g(Parentesc *node,char parent ){
     node->countGen++;
     node->typeOf = parent;
     return node;
 }
 // Getting the type of the parent
-relationship getParent(Parentesc *node){
+char getParent(Parentesc *node){
     return node->typeOf;
 }
 
 // Helping to print the type of the Parent
 inline char* checkTypes(Parentesc *node,char* value1,char* value2){
-    char* s = node->typeOf == mother ? value1 : value2;
+    char* s = node->typeOf == 'M' ? value1 : value2;
     return s;
 }
 
@@ -92,7 +93,7 @@ void globalResult(Parentesc *node){
 
     cout << " von ";
 
-    string entity = node->entity == 'M' ? "Maria" : "Jhonn";
+    string entity = node->entity == 'M' ? "Maria" : "Johann";
     cout << entity;
 }
 
