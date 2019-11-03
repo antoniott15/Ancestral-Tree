@@ -24,7 +24,7 @@
 }
 
 //DEFINING TOKENS
-%token MOTHER FATHER GRAND GREAT THE OF MARY JHON LINE ERROR
+%token MOTHER FATHER GRAND GREAT THE OF MARY JOHN LINE ERROR
 
 //statements statement parent repeatOneStatementTOken RepeatOneToken TheNameOfEntity
 %type <node> stmts stmt parent repeatToken repeatOne name
@@ -60,7 +60,7 @@ repeatOne:
 	| GRAND parent					    {$$ = countingGenerations($2);}
 	;
 name:
-	JHON							    {$$ = PreFa();}
+	JOHN							    {$$ = PreFa();}
 	| MARY							    {$$ = PreMo();}
 	;
 parent:
